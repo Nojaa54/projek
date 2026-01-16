@@ -34,8 +34,8 @@
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="image" :value="__('Product Image')" />
-                            <input type="file" id="image" name="image" class="block mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" />
+                            <x-input-label for="images" :value="__('Product Images (Select Multiple)')" />
+                            <input type="file" id="images" name="images[]" multiple class="block mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" />
                         </div>
 
                         <div class="flex items-center justify-end">

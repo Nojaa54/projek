@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>FRET & FLOW - Premium Guitars</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -19,7 +19,7 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
+    <body class="bg-white text-ikea-black flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
         <header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
             @if (Route::has('login'))
                 <nav class="flex items-center justify-end gap-4">
@@ -121,7 +121,7 @@
                 <div class="bg-[#fff2f2] dark:bg-[#1D0002] relative lg:-ml-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg aspect-[335/376] lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">
                     {{-- Custom Logo --}}
                     <div class="w-full flex justify-center lg:justify-start items-center p-6 text-[#F53003] dark:text-[#F61500] transition-all translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-6">
-                        <h1 class="text-4xl font-bold tracking-tight">WarungKita</h1>
+                        <h1 class="text-4xl font-bold tracking-tight">FRET & FLOW</h1>
                     </div>
 
                     {{-- Light Mode 12 SVG --}}
