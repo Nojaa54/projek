@@ -5,11 +5,11 @@
                 
                 <!-- Left: Gallery (Takes 2 columns) -->
                 <div class="md:col-span-2 space-y-4">
-                    <div class="w-full bg-gray-50 aspect-w-4 aspect-h-3 overflow-hidden">
+                    <div class="w-full bg-gray-50 h-[500px] overflow-hidden rounded-lg border border-gray-100 p-8 flex items-center justify-center">
                         @if($product->images->count() > 0)
-                            <img src="{{ asset('storage/' . $product->images->first()->image_path) }}" alt="{{ $product->name }}" class="object-contain w-full h-full main-image p-8">
+                            <img src="{{ asset('storage/' . $product->images->first()->image_path) }}" alt="{{ $product->name }}" class="object-contain max-h-full max-w-full main-image hover:scale-105 transition duration-500">
                         @else
-                            <img src="https://placehold.co/800x600/f5f5f5/111?text=No+Image" alt="No Image" class="object-cover w-full h-full">
+                            <img src="https://placehold.co/800x600/f5f5f5/111?text=No+Image" alt="No Image" class="object-contain max-h-full max-w-full text-gray-400">
                         @endif
                     </div>
                     <div class="flex gap-4 overflow-x-auto pb-2">

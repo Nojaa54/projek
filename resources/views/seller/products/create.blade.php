@@ -13,29 +13,37 @@
                         @csrf
                         
                         <div class="mb-4">
-                            <x-input-label for="name" :value="__('Product Name')" />
-                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" required />
+                            <x-input-label for="name" :value="__('Nama Produk')" />
+                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required />
+                            <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         </div>
 
                         <div class="mb-4">
-                            <x-input-label for="description" :value="__('Description')" />
-                            <textarea id="description" name="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="4" required></textarea>
+                            <x-input-label for="description" :value="__('Deskripsi')" />
+                            <textarea id="description" name="description" class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm" rows="4" required>{{ old('description') }}</textarea>
+                             <x-input-error :messages="$errors->get('description')" class="mt-2" />
                         </div>
 
                         <div class="grid grid-cols-2 gap-4 mb-4">
                             <div>
-                                <x-input-label for="price" :value="__('Price ($)')" />
-                                <x-text-input id="price" class="block mt-1 w-full" type="number" step="0.01" name="price" required />
+                                <x-input-label for="price" :value="__('Harga (Rp)')" />
+                                <x-text-input id="price" class="block mt-1 w-full" type="number" step="1" name="price" :value="old('price')" required />
+                                <x-input-error :messages="$errors->get('price')" class="mt-2" />
                             </div>
                             <div>
-                                <x-input-label for="stock" :value="__('Stock')" />
-                                <x-text-input id="stock" class="block mt-1 w-full" type="number" name="stock" required />
+                                <x-input-label for="stock" :value="__('Stok')" />
+                                <x-text-input id="stock" class="block mt-1 w-full" type="number" name="stock" :value="old('stock')" required />
+                                <x-input-error :messages="$errors->get('stock')" class="mt-2" />
                             </div>
                         </div>
 
                         <div class="mb-6">
-                            <x-input-label for="images" :value="__('Product Images (Select Multiple)')" />
+                            <x-input-label for="images" :value="__('Foto Produk (Bisa Banyak)')" />
                             <input type="file" id="images" name="images[]" multiple class="block mt-1 w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" />
+                            <x-input-error :messages="$errors->get('images')" class="mt-2" />
+                            @foreach($errors->get('images.*') as $messages)
+                                <x-input-error :messages="$messages" class="mt-2" />
+                            @endforeach
                         </div>
 
                         <div class="flex items-center justify-end">

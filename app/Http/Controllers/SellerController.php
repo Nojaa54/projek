@@ -23,7 +23,7 @@ class SellerController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
         ]);
 
         $product = Auth::user()->products()->create([
@@ -45,7 +45,7 @@ class SellerController extends Controller
 
     public function dashboard()
     {
-        $products = Product::where('seller_id', Auth::id())->with('images')->latest()->get();
+        $products = Product::where('user_id', Auth::id())->with('images')->latest()->get();
         // Assume all orders are visible to seller for now (single seller platform)
         // or filter by items belonging to seller?
         // Since the prompt implies a single seller/admin role for "WarungKita/FRET&FLOW", I will fetch all orders.
