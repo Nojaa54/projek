@@ -58,8 +58,22 @@
                 <!-- Payment Proof Section -->
                 @if($order->payment_method == 'transfer' && $order->status == 'pending')
                     <div class="mb-8 p-6 bg-blue-50 border border-blue-200 rounded-lg print:hidden">
+                        <h3 class="font-bold text-ikea-blue mb-2">Instruksi Pembayaran</h3>
+                        <p class="text-sm text-gray-600 mb-4">Silakan transfer sesuai total tagihan ke rekening berikut:</p>
+                        
+                        <div class="bg-white p-4 rounded border border-blue-100 mb-6">
+                            <div class="flex items-center gap-4 mb-2">
+                                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs">BCA</div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold">Bank Central Asia</p>
+                                    <p class="text-lg font-mono font-bold text-gray-800 tracking-wider">1234 5678 90</p>
+                                    <p class="text-xs text-gray-600">A/N: FRET & FLOW OFFICIAL</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <h3 class="font-bold text-ikea-blue mb-2">Upload Bukti Pembayaran</h3>
-                        <p class="text-sm text-gray-600 mb-4">Silakan transfer sesuai total tagihan dan upload bukti pembayaran di sini.</p>
+                        <p class="text-sm text-gray-600 mb-4">Setelah transfer, mohon upload foto/screenshot bukti pembayaran di sini untuk verifikasi.</p>
                         <form action="{{ route('buyer.orders.upload_proof', $order) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <input type="file" name="payment_proof" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-ikea-blue file:text-white hover:file:bg-blue-700" required>
